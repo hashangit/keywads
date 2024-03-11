@@ -88,6 +88,11 @@ analyzer.run_analysis(output_file_name='Custom_Top_200_Keywords.xlsx')
 
 Remember to replace `your_source_file.xlsx`, `path/to/your/custom_source_file.xlsx`, and `path/to/your/custom_output_directory/` with the actual paths to your files and directories.
 
+### Adjusted Rank Formula
+Adjusted Rank= Avg. monthly searches/(1+Competition (indexed value))×Average Bid
+​
+
+
 ## Support
 
 For support, please open an issue in the GitHub repository at https://github.com/hashangit/keywads.
