@@ -29,8 +29,9 @@ class KeywordAnalyzer:
     def sort_and_extract_top_keywords(self, top_n=200):
         return self.df.sort_values(by='Adjusted Rank', ascending=False).head(top_n)
 
-    def save_to_excel(self, output_file_name, data):
-        output_path = os.path.join('output', output_file_name) 
+    def save_to_excel(self, data, output_file_name='Top_200_Keywords.xlsx', output_path=None):
+        if output_path is None:
+            output_path = os.path.join('output', output_file_name)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         data.to_excel(output_path, index=False)
         print(f"The adjusted list of top keywords has been saved to {output_path}")
