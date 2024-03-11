@@ -42,4 +42,4 @@ class KeywordAnalyzer:
             self.preprocess_data()
             self.calculate_ranks()
             top_keywords = self.sort_and_extract_top_keywords(top_n=top_n)
-            self.save_to_excel(output_file_name, top_keywords)
+            self.save_to_excel(top_keywords, output_file_name)
