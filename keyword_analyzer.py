@@ -32,6 +32,8 @@ class KeywordAnalyzer:
     def save_to_excel(self, data, output_file_name='Top_200_Keywords.xlsx', output_path=None):
         if output_path is None:
             output_path = os.path.join('output', output_file_name)
+        else:
+            output_path = os.path.join(output_path, output_file_name)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         data.to_excel(output_path, index=False)
         print(f"The adjusted list of top keywords has been saved to {output_path}")
