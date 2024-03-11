@@ -29,11 +29,6 @@ We recommend structuring your application folder as follows for ease of use with
 ```
 your_project/
 │
-├── keywads/
-│   ├── __init__.py
-│   ├── source_file_transformer.py
-│   └── keyword_analyzer.py
-│
 ├── data/
 │   └── your_source_file.xlsx
 │
