@@ -65,17 +65,20 @@ This will process `your_source_file.xlsx` from the `data` folder, standardize it
 You can also specify custom paths for both the source and output files if your project structure differs from the recommended setup:
 
 ```python
+# Exmaple
+from keywads import SourceFileTransformer, KeywordAnalyzer
+
 # Specify custom paths
-custom_source_path = 'path/to/your/custom_source_file.xlsx'
-custom_output_path = 'path/to/your/custom_output_directory/'
+custom_source_path = 'data/stats.xlsx'
+custom_output_path = 'output'
 
 # Initialize the transformer with a custom path
 transformer = SourceFileTransformer(source_file_path=custom_source_path)
 transformer.load_and_transform_source()
-transformer.save_transformed_file(output_path=custom_output_path + 'Keyword_Stat.xlsx')
+transformer.save_transformed_file(output_path=custom_output_path + '/Keyword_Stat.xlsx')
 
 # Initialize the analyzer with custom input and output paths
-analyzer = KeywordAnalyzer(file_path=custom_output_path + 'Keyword_Stat.xlsx')
+analyzer = KeywordAnalyzer(file_path=custom_output_path + '/Keyword_Stat.xlsx')
 analyzer.run_analysis(output_file_name='Custom_Top_200_Keywords.xlsx')
 ```
 

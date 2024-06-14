@@ -27,10 +27,16 @@ class SourceFileTransformer:
             }
             self.transformed_df = self.transformed_df.astype(data_types)
             print("Transformation successful.")
+            return True  # Indicating success
         except Exception as e:
             print(f"An error occurred during file loading or transformation: {e}")
+            return False  # Indicating failure
 
     def save_transformed_file(self, output_path=None):
+        if self.transformed_df is None:
+            print("No data to save.")
+            return  # Early exit if no data to save
+
         if output_path is None:
             output_path = os.path.join('data', 'Keyword_Stat.xlsx')
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
